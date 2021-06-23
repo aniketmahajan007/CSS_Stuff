@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <title>Navbar</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<nav>
+    <div class="logo">My Logo</div>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+<style>
+    *{
+        margin:0;
+    }
+    body{
+        background-color: whitesmoke;
+    }
+    nav{
+        width: 100%;
+        background-color: black;
+        color:white;
+        padding: 10px;
+        font-family: Roboto sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    nav .logo{
+        font-size: 24px;
+        letter-spacing: 1px;
+        flex:0.3;
+        margin-left:1em;
+        font-weight: 600;
+    }
+    nav ul{
+        flex:0.7;
+        display: flex;
+        font-size: 18px;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    nav ul li{
+        list-style: none;
+        padding:10px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition:all 0.2s ease-in-out;
+        width: 70px;
+        text-align: center;
+    }
+    nav ul li:hover{
+        border:1px solid cyan;
+        box-shadow: 1px 1px 5px 1px cyan;
+    }
+    nav a{
+        color:white;
+        text-decoration: none;
+    }
+</style>
+</body>
+</html>
