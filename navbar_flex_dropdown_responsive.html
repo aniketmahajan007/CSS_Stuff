@@ -1,0 +1,169 @@
+<html lang="en">
+<head>
+    <title>Navbar</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<nav>
+    <div class="logo">My Logo</div>
+    <div class="breadcrumb" id="breadcrumb">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <ul id="nav_items" class="nav_items">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Photo&nbsp;<i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown1">
+                <li>Photo</li>
+                <li>Video</li>
+            </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">More&nbsp;<i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown2">
+                <li>Login</li>
+                <li>SignUp</li>
+                <li>Blogs</li>
+            </ul>
+        </li>
+        <li><a href="#">About</a></li>
+    </ul>
+</nav>
+<style>
+    *{
+        margin:0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: whitesmoke;
+    }
+    nav{
+        width: 100%;
+        background-color: black;
+        color:white;
+        padding: 10px;
+        font-family: Roboto sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+    }
+    nav .logo{
+        font-size: 24px;
+        letter-spacing: 1px;
+        flex:0.3;
+        margin-left:1em;
+        font-weight: 600;
+    }
+    nav ul{
+        flex:0.7;
+        display: flex;
+        font-size: 18px;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    nav ul li{
+        list-style: none;
+        padding:10px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition:all 0.2s ease-in-out;
+        width: 75px;
+    }
+    nav ul li:hover{
+        border:1px solid cyan;
+        box-shadow: 1px 1px 5px 1px cyan;
+    }
+    nav a{
+        color:white;
+        text-decoration: none;
+        display: flex;
+    }
+    /**  DropDown **/
+    nav a i{
+        font-size: 12px;
+        margin-top:6px
+    }
+    nav > ul >li > ul{
+        flex-direction: column;
+        position: absolute;
+        background-color: black;
+        margin-top:0.6em;
+        margin-left:-20px;
+        display: none;
+    }
+    nav > ul > li> ul> li{
+        width: 100px;
+        text-align: center;
+    }
+    nav > ul > li:hover .dropdown1{
+        display: flex;
+    }
+    nav > ul > li:hover .dropdown2{
+        display: flex;
+    }
+    .breadcrumb{
+        display: none;
+        right: 20px;
+        position: absolute;
+        margin-top: -1.8em;
+        cursor: pointer;
+    }
+    .breadcrumb div{
+        margin: 6px;
+        height: 2px;
+        background-color: white;
+        border: 1px solid white;
+        width: 30px;
+    }
+    /** Reponsive **/
+    @media only screen and (max-width: 600px) {
+        nav{
+            display: block;
+        }
+        nav > ul{
+            background-color: black;
+            flex-direction: column;
+            margin-left: -20px;
+            width: 105%;
+            margin-top:13px;
+            display: none;
+        }
+        nav > ul > li{
+            margin-left:-70%;
+
+        }
+        nav > ul > li:hover{
+            border: 1px solid transparent;
+            box-shadow: 0px 0px 0px 0px;
+        }
+        .breadcrumb{
+            display: block;
+        }
+        nav > ul >li > ul{
+            position: relative;
+            margin-left:2em
+        }
+    }
+</style>
+<script>
+    document.getElementById("breadcrumb").addEventListener("click",()=>{
+        let s = document.getElementById("nav_items").style.display;
+        if(s === "flex"){
+            document.getElementById("nav_items").style.display = "none";
+        }else{
+            document.getElementById("nav_items").style.display ="flex";
+        }
+    });
+</script>
+</body>
+</html>

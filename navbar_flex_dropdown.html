@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -14,15 +15,27 @@
     <div class="logo">My Logo</div>
     <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="#">Photo&nbsp;<i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown1">
+                <li>Photo</li>
+                <li>Video</li>
+            </ul>
+        </li>
         <li><a href="#">Contact</a></li>
+        <li><a href="#">More&nbsp;<i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown2">
+                <li>Login</li>
+                <li>SignUp</li>
+                <li>Blogs</li>
+            </ul>
+        </li>
+        <li><a href="#">About</a></li>
     </ul>
 </nav>
 <style>
     *{
         margin:0;
+        padding: 0;
         box-sizing: border-box;
     }
     body{
@@ -58,8 +71,7 @@
         cursor: pointer;
         border: 1px solid transparent;
         transition:all 0.2s ease-in-out;
-        width: 70px;
-        text-align: center;
+        width: 75px;
     }
     nav ul li:hover{
         border:1px solid cyan;
@@ -68,6 +80,30 @@
     nav a{
         color:white;
         text-decoration: none;
+        display: flex;
+    }
+    /**  DropDown **/
+    nav a i{
+        font-size: 12px;
+        margin-top:6px
+    }
+    nav > ul >li > ul{
+        flex-direction: column;
+        position: absolute;
+        background-color: black;
+        margin-top:0.6em;
+        margin-left:-20px;
+        display: none;
+    }
+    nav > ul > li> ul> li{
+        width: 100px;
+        text-align: center;
+    }
+    nav > ul > li:hover .dropdown1{
+        display: flex;
+    }
+    nav > ul > li:hover .dropdown2{
+        display: flex;
     }
 </style>
 </body>
