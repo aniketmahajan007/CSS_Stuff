@@ -11,6 +11,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
+<nav>
+  <div class="my_logo"><a href="#">MY LOGO</a></div>
+  <div class="nav_items">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+  <div class="search_box">
+    <i class="fas fa-search"></i>
+    <input type="search" class="search_input" placeholder="Search ....">
+  </div>
+</nav>
+<style>
+  *{
+    margin:0;
+    padding: 0;
+  }
+  nav{
+    display: flex;
+    background-color:black;
+    padding:20px;
+    align-items: center;
+  }
+  .my_logo{
+    flex:0.2;
+    font-size: 1.4em;
+  }
+  .my_logo a{
+    color:white;
+    text-decoration: none;
+    font-family: Roboto sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+   }
+  .nav_items{
+    flex:0.6;
+  }
+  .nav_items ul{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.1em;
+  }
+  .nav_items ul a{
+    color:white;
+    text-decoration: none;
+  }
+  .nav_items ul a:hover{
+    color:cyan;
+  }
+  .search_box{
+    flex:0.1;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    transition: all 200ms ease-in-out;
+  }
+  .search_box input{
+    outline: none;
+    padding: 6px;
+    border-radius: 20px;
+    border:0;
+  }
+  .search_box i{
+    color:gray;
+    margin-left:8px;
+  }
+</style>
 </body>
 </html>
