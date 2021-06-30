@@ -10,7 +10,7 @@
 <body>
 <main>
     <br>
-    <h1>Image Slider with Autoplay</h1>
+    <h1>Slider with Autoplay Responsive</h1>
     <br><br><br>
     <span>Note: Autoplayer will be disabled once arrow is used</span>
     <br><br><br><br><br>
@@ -89,6 +89,53 @@
         color:purple;
         border:10px solid purple;
         margin-left:20px;
+    }
+    @media screen and (max-width: 750px){
+        .slider{
+            width: 450px;
+        }
+        .slider img{
+            height:180px;
+        }
+        i{
+            font-size: 3em;
+        }
+        .slides{
+            margin-left:1.5em;
+        }
+        .fa-caret-right{
+            margin-left: 0.6em;
+        }
+        .radio_pointer{
+            margin-left:-20px
+        }
+        .radio_status{
+            margin-left:10px
+        }
+    }
+    @media screen and (max-width: 466px){
+        main h1{
+            margin-bottom: -1em;
+        }
+        .slider{
+            width: 300px;
+        }
+        .slider img{
+            height:100px;
+        }
+        i{
+            font-size: 2em;
+        }
+        .slides{
+            margin-left:1em;
+        }
+        .fa-caret-left{
+            margin-top:35px
+        }
+        .fa-caret-right{
+            margin-left: 0.4em;
+            margin-top:35px
+        }
     }
 </style>
 <script>

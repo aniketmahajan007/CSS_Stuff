@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Slider</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+</head>
+<body>
+<main>
+  <br>
+  <h1>Image Slider</h1>
+  <br><br><br>
+  <br><br><br><br>
+  <div class="slider">
+    <i id="prev" class="fas fa-caret-left"></i>
+    <div class="slides">
+      <img class="slide_img active" alt="slide1" src="./1.jpg" >
+      <img class="slide_img img_slide" alt="slide2" src="./2.jpg" >
+      <img class="slide_img img_slide" alt="slide3" src="./3.jpg" >
+      <img class="slide_img img_slide" alt="slide4" src="./4.jpg" >
+    </div>
+    <i id="next" class="fas fa-caret-right"></i>
+  </div>
+  <br>
+  <br>
+  <div class="radio_pointer">
+    <input checked type="radio" disabled name="slider" class="radio_status">
+    <input type="radio" disabled name="slider" class="radio_status">
+    <input type="radio" disabled name="slider" class="radio_status">
+    <input type="radio" disabled name="slider" class="radio_status">
+  </div>
+</main>
+<style>
+  *{
+    margin:0;
+    padding: 0px;
+  }
+  main{
+    padding: 1em;
+  }
+  h1{
+    text-align: center;
+  }
+  .slider{
+    margin: auto;
+    width:720px;
+    display: flex;
+  }
+  i{
+    font-size: 5em;
+  }
+  .fa-caret-left{
+    margin-top: 1.3em;
+  }
+  .fa-caret-right{
+    margin-top: 1.3em;
+    margin-left: 0.8em
+  }
+  .slides{
+    display: flex;
+    margin-left: 4em;
+  }
+  .slider img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    opacity: 0;
+  }
+  .img_slide{
+    display: none;
+  }
+  .active{
+    opacity: 1!important;
+    transition: all 600ms ease-in-out;
+    transform: scale(1.04);
+  }
+  .radio_pointer{
+    text-align: center;
+  }
+  .radio_status{
+    background-color:purple;
+    color:purple;
+    border:10px solid purple;
+    margin-left:20px;
+  }
+</style>
+<script>
+  let i=1;
+  function img_slider(){
+    if(i>3 || i<0){
+      i=0;
+    }
+    let element = document.getElementsByClassName('slide_img');
+    let rad_element = document.getElementsByClassName("radio_status");
+    if(!i){
+      element[3].classList.add('img_slide');
+      element[3].classList.remove('active');
+      rad_element[3].checked = false;
+    }else{
+      element[i-1].classList.add('img_slide');
+      element[i-1].classList.remove('active');
+      rad_element[i-1].checked = false;
+    }
+    element[i].classList.remove('img_slide');
+    setTimeout(()=>{
+      element[i].classList.add('active');
+      rad_element[i].checked = true;
+      i++;
+    },10);
+  }
+  function prev_img_slider(){
+    let element = document.getElementsByClassName('slide_img');
+    let rad_element = document.getElementsByClassName("radio_status");
+    element[i-1].classList.add('img_slide');
+    element[i-1].classList.remove('active');
+    rad_element[i-1].checked = false;
+    i-=2;
+    if(i<0){i=3;}
+    element[i].classList.remove('img_slide');
+    setTimeout(()=>{
+      element[i].classList.add('active');
+      rad_element[i].checked = true;
+      i++;
+    },10);
+  }
+  document.getElementById("prev").addEventListener("click",()=>{
+    prev_img_slider();
+  });
+  document.getElementById("next").addEventListener("click",()=>{
+    img_slider();
+  });
+</script>
+</body>
+</html>

@@ -23,7 +23,10 @@
     </div>
     <div id="Slider">
       <h2>Slider</h2>
+      <a target="_blank" href="Slider/slider.html">Slider</a><br>
+      <a target="_blank" href="Slider/slider_responsive.html">Slider Responsive</a><br>
       <a target="_blank" href="Slider/slider_with_autoplay.html">Slider With Autoplay</a><br>
+      <a target="_blank" href="Slider/slider_with_autoplay_responsive.html">Slider With Autoplay Responsive</a><br>
     </div>
   </section>
 </main>
@@ -44,6 +47,15 @@
   section > div > a{
     letter-spacing: 1px;
     text-decoration: none;
+  }
+  @media screen and (max-width: 600px){
+    section{
+      display: block;
+    }
+    section > div{
+      width: 95%;
+      margin-top:1em;
+    }
   }
 </style>
 </body>
