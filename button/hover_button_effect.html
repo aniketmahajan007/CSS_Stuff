@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rotate Button Effect</title>
+</head>
+<body>
+<h1 style="text-align: center">Button Hover Effect</h1>
+<main>
+  <a href="#" id="button1">Hover Me</a>
+  <br>
+  <a href="#" id="button2">Hover Me</a>
+  <br>
+  <a href="#" id="button3">Hover Me</a>
+</main>
+<style>
+  main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    flex-direction: column;
+  }
+  /* Styling button */
+  a{
+    text-decoration: none;
+    font-size: 46px;
+    border: 5px solid #272727;
+    padding: 40px 80px;
+    position: relative;
+    color: purple;
+    overflow: hidden;
+    transition: all 1s;
+  }
+  /* Adding Effect Transition */
+  a:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top:0;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transition: all 1s;
+  }
+  /* on hover effect start */
+  a:hover{
+    color:white;
+  }
+  #button1:before{
+    transform: rotateX(90deg) rotateY(90deg);
+  }
+  #button2:before{
+    transform: rotateX(180deg) rotateY(90deg) ;
+  }
+  #button1:hover:before{
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  #button2:hover:before{
+    transform: rotateY(180deg) rotateX(180deg);
+  }
+  #button3:before{
+    transform: rotateX(90deg);
+  }
+  #button3:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top:0;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transition: all 1s;
+    transform: rotateY(90deg);
+  }
+  #button3:hover:before{
+    transform: rotateX(0deg);
+  }
+  #button3:hover:after{
+    transform: rotateY(0deg);
+  }
+</style>
+</body>
+</html>
