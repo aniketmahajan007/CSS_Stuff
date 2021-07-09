@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swipe Button Effect</title>
+</head>
+<body>
+<h1>Swiped Effect !!!</h1>
+<a href="#" id="button1">Hover Me</a>
+<br>
+<a href="#" id="button2">Hover Me</a>
+<br>
+<a href="#" id="button3">Hover Me</a>
+<br>
+<a href="#" id="button4">Hover Me</a>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: whitesmoke;
+        flex-direction: column;
+    }
+    a{
+        text-decoration: none;
+        font-size: 46px;
+        border: 5px solid #272727;
+        padding: 40px 80px;
+        position: relative;
+        overflow: hidden;
+        color: purple;
+    }
+    #button1:before{
+        content: 'Hello there!';
+        color:white;
+        position: absolute;
+        left: 0;
+        top:0;
+        background-color: red;
+        height: 100%;
+        width: 100%;
+        transform: translateY(-100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 1s;
+    }
+    #button1:hover:before{
+        transform: translateY(0%);
+    }
+    #button2:before{
+        content: 'Swiped Up!';
+        color:white;
+        position: absolute;
+        left: 0;
+        top:0;
+        background-color: red;
+        height: 100%;
+        width: 100%;
+        transform: translateY(100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 1s;
+    }
+    #button2:hover:before{
+        transform: translateY(0%);
+    }
+    #button3:before{
+        content: 'Swiped Right!';
+        color:white;
+        position: absolute;
+        left: 0;
+        top:0;
+        background-color: red;
+        height: 100%;
+        width: 100%;
+        transform: translateX(-100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 1s;
+    }
+    #button3:hover:before{
+        transform: translateX(0%);
+    }
+    #button4:before{
+        content: 'Swiped Left!';
+        color:white;
+        position: absolute;
+        left: 0;
+        top:0;
+        background-color: red;
+        height: 100%;
+        width: 100%;
+        transform: translateX(100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 1s;
+    }
+    #button4:hover:before{
+        transform: translateX(0%);
+    }
+</style>
+</body>
+</html>
