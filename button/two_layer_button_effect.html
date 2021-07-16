@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Two Layer Button Effect</title>
+</head>
+<body>
+<h1>Layer Button Effect</h1>
+<a href="#" id="button1">Hover Me</a>
+<br>
+<a href="#" id="button2">Hover Me</a>
+<br>
+<a href="#" id="button3">Hover Me</a>
+<br>
+<a href="#" id="button4">Hover Me</a>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+    }
+    a{
+        text-decoration: none;
+        font-size: 46px;
+        border: 5px solid #272727;
+        padding: 40px 80px;
+        position: relative;
+        overflow: hidden;
+        background-color: black;
+        color:black;
+    }
+    a:before{
+        color: purple;
+        content: 'Hover Me';
+        position: absolute;
+        left: 0;
+        top:0;
+        background-color: peachpuff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        transition: all 500ms ease-in-out;
+    }
+    #button1:hover:before{
+        transform: translateX(100%) translateY(100%);
+    }
+    a:after{
+        content: 'Hello There!';
+        position: absolute;
+        color: purple;
+        left: 0;
+        top:0;
+        background-color: greenyellow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        transform: translateX(-100%) translateY(-100%);
+        transition: all 500ms ease-in-out;
+    }
+    #button1:hover:after{
+        transform: translateX(0%) translateY(0%);
+    }
+    #button2:hover:before{
+        transform: translateX(100%) translateY(-100%);
+    }
+    #button2:after{
+        transform: translateX(-100%) translateY(100%);
+    }
+    #button2:hover:after{
+        transform: translateX(0%) translateY(0%);
+    }
+    #button3:hover:before{
+        transform: translateX(-100%) translateY(-100%);
+    }
+    #button3:after{
+        transform: translateX(-100%) translateY(100%);
+    }
+    #button3:hover:after{
+        transform: translateX(0%) translateY(0%);
+    }
+    #button4:hover:before{
+        transform: translateX(100%) translateY(100%);
+    }
+    #button4:after{
+        transform: translateX(-100%) translateY(100%);
+    }
+    #button4:hover:after{
+        transform: translateX(0%) translateY(0%);
+    }
+</style>
+</body>
+</html>
