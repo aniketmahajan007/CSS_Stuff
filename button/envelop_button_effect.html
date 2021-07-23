@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Envelop Button Effect</title>
+</head>
+<body>
+<a href="#">Hover me</a>
+<style>
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  a{
+    text-decoration: none;
+    font-size: 46px;
+    border: 5px solid #272727;
+    padding: 40px 80px;
+    position: relative;
+    color: purple;
+  }
+  a:before{
+    content: 'Envelop';
+    position: absolute;
+    left: 0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateX(270deg);
+    transform-origin: top;
+    transition: all .5s;
+  }
+  a:hover:before{
+    transform: rotateX(0deg);
+  }
+  a:after{
+    content: 'Envelop Cover';
+    position: absolute;
+    left: 0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateX(270deg);
+    transform-origin: top;
+    transition: all .5s;
+    transition-delay: .25s;
+    color:white;
+  }
+  a:hover:after{
+    transform: rotateX(0deg);
+  }
+</style>
+</body>
+</html>

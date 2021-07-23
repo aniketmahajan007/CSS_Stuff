@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Layer Swapping Button Effect</title>
+</head>
+<body>
+<h1>Layer Swapping Button Effect</h1>
+<a href="#" id="button1"></a>
+<br><br>
+<a href="#" id="button2"></a>
+<br><br>
+<a href="#" id="button3"></a>
+<style>
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+  }
+  a{
+    text-decoration: none;
+    font-size: 46px;
+    position: relative;
+    border: 5px solid yellow;
+  }
+  #button1:before{
+    content: "Hover Me";
+    border: 5px solid yellow;
+    padding: 40px 80px;
+    position: absolute;
+    color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    transform: translateX(-100%) rotateY(180deg);
+    transition: all .5s;
+    opacity: 0;
+  }
+  #button1:hover:before{
+    transform: translateX(0%) translateX(0%) rotateY(0deg);
+    opacity: 1;
+  }
+  #button1:after{
+    content: "Hover Me";
+    border: 5px solid yellow;
+    padding: 40px 80px;
+    color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    transition: all .5s;
+    opacity: 1;
+  }
+  #button1:hover:after{
+    transform: translateX(100%) rotateY(180deg);
+    opacity: 0;
+  }
+  #button2:before{
+    content: "Hover Me";
+    border: 5px solid yellow;
+    padding: 40px 80px;
+    position: absolute;
+    color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    transform: translateX(-100%) translateY(100%) rotateY(180deg);
+    transition: all .5s;
+    opacity: 0;
+  }
+  #button2:hover:before{
+    transform: translateX(0%) translateY(0%) rotateY(0deg);
+    opacity: 1;
+  }
+  #button2:after{
+    content: "Hover Me";
+    border: 5px solid yellow;
+    padding: 40px 80px;
+    color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    transition: all .5s;
+    opacity: 1;
+  }
+  #button2:hover:after{
+    transform: translateX(100%) translateY(100%) rotateY(180deg);
+    opacity: 0;
+  }
+  #button3:before{
+    content: "Hover Me";
+    border: 5px solid yellow;
+    padding: 40px 80px;
+    position: absolute;
+    color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    transform: translateX(-100%) translateY(-100%) rotateY(180deg);
+    transition: all .5s;
+    opacity: 0;
+  }
+  #button3:hover:before{
+    transform: translateX(0%) translateY(0%) rotateY(0deg);
+    opacity: 1;
+  }
+  #button3:after{
+    content: "Hover Me";
+    border: 5px solid yellow;
+    padding: 40px 80px;
+    color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    transition: all .5s;
+    opacity: 1;
+  }
+  #button3:hover:after{
+    transform: translateX(100%) translateY(-100%) rotateY(180deg);
+    opacity: 0;
+  }
+</style>
+</body>
+</html>
