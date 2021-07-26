@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Splitting Button Effect</title>
+</head>
+<body>
+<h1>Splitting Button Effect</h1>
+<br><br><br>
+<a href="#"><span>Hover Me</span></a>
+<style>
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+  }
+  a{
+    text-decoration: none;
+    font-size: 40px;
+    border: 5px solid #272727;
+    padding: 40px 80px;
+    position: relative;
+    color: purple;
+    overflow: hidden;
+    transition: all .5s;
+  }
+  a:hover{
+    color: white;
+  }
+  a:before ,
+  a:after ,
+  span:before,
+  span:after
+  {
+    content: "";
+    position: absolute;
+    width: 25%;
+    background: darkgoldenrod;
+    height: 100%;
+    z-index: -1;
+    transition: all .5s;
+  }
+  a:before{
+    top:100%;
+    left: 0%;
+  }
+  a:hover:before{
+    top:0;
+    left: 0;
+  }
+  a:after{
+    top:-100%;
+    left: 25%;
+  }
+  a:hover:after{
+    top:0;
+  }
+  a span:before{
+    top: 100%;
+    right: 25%;
+  }
+  a:hover span:before{
+    top: 0;
+    right: 25%;
+  }
+  a span:after{
+    top:-100%;
+    right: 0%;
+  }
+  a:hover span:after{
+    top:0;
+    right: 0;
+  }
+</style>
+</body>
+</html>
